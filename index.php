@@ -2,6 +2,7 @@
     require_once 'php/libs/Markdown/markdown.php';
     require_once 'php/functions.php';
     $display = "0";
+    
     $val = $_POST['button'];
     $oldVal = $_GET['val'];
     if(isset($val)){
@@ -9,12 +10,11 @@
     }else{
         $oldVal=0;
     }
+    
+    // making url parameters
     $url = "?val=".urlencode($display)."";
     if($val == '='){
         $url .= "&opr= =";
-    }
-    if(isset($_GET['opr'])){
-        //echo $_GET['opr']; exit;
     }
 ?>
 <!DOCTYPE html>

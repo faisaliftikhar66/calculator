@@ -1,5 +1,11 @@
 <?php
-
+/**
+* function checkValue
+* @param $value and $oldVal
+* This function check value and operators that if val is numeric then append with previous and make a expression also. If operator is equal sign then
+* it check again value is numeric then reset otherwise append and generate expression.
+* @return display 
+*/
 function checkValue($value,$oldVal){
         switch($value){
             case '=':
@@ -22,35 +28,19 @@ function checkValue($value,$oldVal){
                 break;
         }
         return $display;
-    }
-    
+}
+/**
+* function calculate
+* @param expression
+* This function calculate the result of arithmethic expression with create_function technique. Firstly it check/matches the expression
+* which is exactly right for calculation or not.
+* @return result;
+*/
     function calculate($exp){
           if(preg_match('/(?:\d+(?:(\.|)\d*)?\D)*\d*(?:(\.|)\d+)/', $exp, $matches) !== FALSE){
               $cf_DoCalc = create_function("", "return (" . $matches[0] . ");" );
               $res = $cf_DoCalc();
               return $res;    
           }
-        /*if(preg_match('/(\d+)(?:\s*)([\+\-\*\/])(?:\s*)(\d+)/', $exp, $matches) !== FALSE){
-            $operator = $matches[2];
-            echo '<pre>'; print_r($matches); exit;
-            switch($operator){
-                case '+':
-                    $res = $matches[1] + $matches[3];
-                    break;
-                case '-':
-                    $res = $matches[1] - $matches[3];
-                    break;
-                case '*':
-                    $res = $matches[1] * $matches[3];
-                    break;
-                case '/':
-                    $res = $matches[1] / $matches[3];
-                    break;
-            }
-
-            return $res;
-        }else{
-            return 'arithmetic error';
-        }*/
     }
 ?>
