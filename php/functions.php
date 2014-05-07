@@ -2,7 +2,7 @@
     /**
     * function checkValue
     * @param $value and $oldVal
-    * This function check value and operators that if val is numeric then append with previous and make a expression also. If operator is equal sign then
+    * This light weight function check value and operators that if val is numeric then append with previous and make a expression also. If operator is equal sign then
     * it check again value is numeric then reset otherwise append and generate expression.
     * @return display 
     */
@@ -42,7 +42,7 @@
     /**
     * function calculate
     * @param expression
-    * This function calculate the result of arithmethic expression with create_function technique. Firstly it check/matches the expression
+    * This light weight function calculate the result of arithmethic expression with create_function technique. Firstly it check/matches the expression
     * which is exactly right for calculation or not.
     * @return result;
     */
