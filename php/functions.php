@@ -12,7 +12,7 @@ function checkValue($value,$oldVal){
                 $display = calculate($oldVal);
                 break;
             case 'C':
-                header('Location: /calculator/index.php ');
+                header('Location: /faisal/calculator/index.php ');
                 break;
             default:
                 if(isset($oldVal) && $oldVal !=0){
