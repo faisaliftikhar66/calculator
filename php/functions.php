@@ -21,6 +21,7 @@
                 $display = power($oldVal);
                 break;
             case 'C':
+                $baseurl = baseurl();
                 header("Location: {$baseurl}/calculator/index.php ");
                 break;
             default:
